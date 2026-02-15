@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base target="_self">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Hadley P. Cajayon</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px 50px;
+    background: #f5f7fb;
+    gap: 30px;
+}
+
+header a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+header a:link {
+    color: #2a5298;
+}
+
+header a:visited {
+    color: #666;
+}
+
+header a:hover {
+    background: #2a5298;
+    color: white;
+    transform: translateY(-2px);
+}
+
+header a:active {
+    background: #1e3c72;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: #1e3c72;
+    font-size: 32px;
+    margin: 40px 0;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    background: #e9ecef;
+    padding: 0;
+}
+
+.tab-link {
+    flex: 1;
+    padding: 20px 30px;
+    background: #e9ecef;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border-bottom: 4px solid transparent;
+    color: #666;
+}
+
+.tab-link:hover {
+    background: #d4d8dd;
+    color: #1e3c72;
+}
+
+.tab-content {
+    display: none;
+    padding: 50px;
+}
+
+.tab-content:target {
+    display: block;
+}
+
+.container:not(:has(:target)) #myself {
+    display: block;
+}
+
+.section-title {
+    color: #1e3c72;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.photo-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.photo-item a {
+    display: block;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    padding: 15px;
+    text-align: center;
+    background: #f8f9fa;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    border-top: 2px solid #e9ecef;
+}
+
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #f5f7fb;
+    color: #666;
+}
+
+.back-btn {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #2a5298;
+    color: white;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.back-btn:hover {
+    background: #1e3c72;
+    transform: translateY(-2px);
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+    <a href="index.html">Home</a>
+    <a href="contacts.html">Contacts</a>
+    <a href="Mybeats.html">Mybeats</a>
+    <a href="gallery.html">Gallery</a>
+</header>
+<h1>Photo Gallery: Moments That Matter</h1>
+
+<div class="tabs">
+    <a href="#myself" class="tab-link">Myself</a>
+    <a href="#family-friends" class="tab-link">Family and Friends</a>
+    <a href="#trips" class="tab-link">Trips</a>
+</div>
+
+<div id="myself" class="tab-content">
+    <h2 class="section-title"><strong>Myself</strong></h2>
+    <div class="photo-grid">
+        <div class="photo-item">
+            <a href="Myself/myself1.jpg" target="galleryWindow" title="Selfie">
+                <img src="Myself/myself1.jpg" alt="Selfie">
+            </a>
+            <p class="photo-caption">Selfie</p>
+        </div>
+        <div class="photo-item">
+            <a href="Myself/myself2.JPG" target="galleryWindow" title="Basketball">
+                <img src="Myself/myself2.JPG" alt="Basketball">
+            </a>
+            <p class="photo-caption">Basketball</p>
+        </div>
+        <div class="photo-item">
+            <a href="Myself/myself3.jpg" target="galleryWindow" title="Side View">
+                <img src="Myself/myself3.jpg" alt="Side View">
+            </a>
+            <p class="photo-caption">Side View</p>
+        </div>
+        <div class="photo-item">
+            <a href="Myself/myself4.jpg" target="galleryWindow" title="Mirror Shot">
+                <img src="Myself/myself4.jpg" alt="Mirror Shot">
+            </a>
+            <p class="photo-caption">Mirror Shot</p>
+        </div>
+        <div class="photo-item">
+            <a href="Myself/myself5.jpg" target="galleryWindow" title="Prom">
+                <img src="Myself/myself5.jpg" alt="Prom">
+            </a>
+            <p class="photo-caption">Prom</p>
+        </div>
+        <div class="photo-item">
+            <a href="Myself/myself6.jpg" target="galleryWindow" title="Back View">
+                <img src="Myself/myself6.jpg" alt="Back View">
+            </a>
+            <p class="photo-caption">Back View</p>
+        </div>
+        <div class="photo-item">
+            <a href="Myself/myself7.jpg" target="galleryWindow" title="Yellow">
+                <img src="Myself/myself7.jpg" alt="Yellow">
+            </a>
+            <p class="photo-caption">Yellow</p>
+        </div>
+        <div class="photo-item">
+            <a href="Myself/myself8.jpg" target="galleryWindow" title="Nature">
+                <img src="Myself/myself8.jpg" alt="Nature">
+            </a>
+            <p class="photo-caption">Nature</p>
+        </div>
+    </div>
+</div>
+
+<div id="family-friends" class="tab-content">
+    <h2 class="section-title"><strong>Family and Friends</strong></h2>
+    <div class="photo-grid">
+        <div class="photo-item">
+            <a href="FM/FM1.jpg" target="galleryWindow" title="Tarlac Trip">
+                <img src="FM/FM1.jpg" alt="Tarlac Trip">
+            </a>
+            <p class="photo-caption">Tarlac Trip</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM2.JPG" target="galleryWindow" title="Dayones">
+                <img src="FM/FM2.JPG" alt="Dayones">
+            </a>
+            <p class="photo-caption">Dayones</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM3.jpg" target="galleryWindow" title="New Year's Eve">
+                <img src="FM/FM3.jpg" alt="New Year's Eve">
+            </a>
+            <p class="photo-caption">New Year's Eve</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM4.JPG" target="galleryWindow" title="My Love">
+                <img src="FM/FM4.JPG" alt="My Love">
+            </a>
+            <p class="photo-caption">My Love</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM5.jpg" target="galleryWindow" title="Bro's Graduation">
+                <img src="FM/FM5.jpg" alt="Bro's Graduation">
+            </a>
+            <p class="photo-caption">Bro's Graduation</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM6.jpg" target="galleryWindow" title="Family Bonding">
+                <img src="FM/FM6.jpg" alt="Family Bonding">
+            </a>
+            <p class="photo-caption">Family Bonding</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM7.jpg" target="galleryWindow" title="Family Reunion">
+                <img src="FM/FM7.jpg" alt="Family Reunion">
+            </a>
+            <p class="photo-caption">Family Reunion</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM8.JPG" target="galleryWindow" title="Hazzina's Debut">
+                <img src="FM/FM8.JPG" alt="Hazzina's Debut">
+            </a>
+            <p class="photo-caption">Hazzina's Debut</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM9.jpg" target="galleryWindow" title="Gelo's Birthday">
+                <img src="FM/FM9.jpg" alt="Gelo's Birthday">
+            </a>
+            <p class="photo-caption">Gelo's Birthday</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM10.jpg" target="galleryWindow" title="Party">
+                <img src="FM/FM10.jpg" alt="Party">
+            </a>
+            <p class="photo-caption">Party</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM11.jpg" target="galleryWindow" title="Tito Yen's Wedding">
+                <img src="FM/FM11.jpg" alt="Tito Yen's Wedding">
+            </a>
+            <p class="photo-caption">Tito Yen's Wedding</p>
+        </div>
+        <div class="photo-item">
+            <a href="FM/FM12.jpg" target="galleryWindow" title="OG's">
+                <img src="FM/FM12.jpg" alt="OG's">
+            </a>
+            <p class="photo-caption">OG's</p>
+        </div>
+    </div>
+</div>
+
+<div id="trips" class="tab-content">
+    <h2 class="section-title"><strong>Trips</strong></h2>
+    <div class="photo-grid">
+        <div class="photo-item">
+            <a href="Trips/trip1.jpg" target="galleryWindow" title="Beach Escapade">
+                <img src="Trips/trip1.jpg" alt="Beach Escapade">
+            </a>
+            <p class="photo-caption">Beach Escapade</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip2.jpg" target="galleryWindow" title="Mountain Adventure">
+                <img src="Trips/trip2.jpg" alt="Mountain Adventure">
+            </a>
+            <p class="photo-caption">Mountain Adventure</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip3.jpg" target="galleryWindow" title="Island Hopping">
+                <img src="Trips/trip3.jpg" alt="Island Hopping">
+            </a>
+            <p class="photo-caption">Island Hopping</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip4.jpg" target="galleryWindow" title="Wedding">
+                <img src="Trips/trip4.jpg" alt="Wedding">
+            </a>
+            <p class="photo-caption">Wedding</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip5.jpg" target="galleryWindow" title="Sponty Trip">
+                <img src="Trips/trip5.jpg" alt="Sponty Trip">
+            </a>
+            <p class="photo-caption">Sponty Trip</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip6.jpg" target="galleryWindow" title="River">
+                <img src="Trips/trip6.jpg" alt="River">
+            </a>
+            <p class="photo-caption">River</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip7.jpg" target="galleryWindow" title="Football">
+                <img src="Trips/trip7.jpg" alt="Football">
+            </a>
+            <p class="photo-caption">Football</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip8.jpg" target="galleryWindow" title="Sto Nino's Feast Day">
+                <img src="Trips/trip8.jpg" alt="Sto Nino's Feast Day">
+            </a>
+            <p class="photo-caption">Sto Nino's Feast Day</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip9.jpg" target="galleryWindow" title="Waves">
+                <img src="Trips/trip9.jpg" alt="Waves">
+            </a>
+            <p class="photo-caption">Waves</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip10.jpg" target="galleryWindow" title="River n Moutains">
+                <img src="Trips/trip10.jpg" alt="River n Moutains">
+            </a>
+            <p class="photo-caption">River n Moutains</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip11.jpg" target="galleryWindow" title="Wedding Church">
+                <img src="Trips/trip11.jpg" alt="Wedding Church">
+            </a>
+            <p class="photo-caption">Wedding Church</p>
+        </div>
+        <div class="photo-item">
+            <a href="Trips/trip12.jpg" target="galleryWindow" title="Coffee">
+                <img src="Trips/trip12.jpg" alt="Coffee">
+            </a>
+            <p class="photo-caption">Coffee </p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <a href="index.html" class="back-btn">← Back to Home</a><br><br>
+    <small><strong>Created by Hadley Cajayon - 2026</strong></small>
+</footer>
+
+</div>
+
+</body>
+</html>

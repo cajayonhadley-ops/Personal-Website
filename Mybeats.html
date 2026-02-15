@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Beats</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px 50px;
+    background: #f5f7fb;
+    gap: 30px;
+}
+
+header a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+header a:link {
+    color: #2a5298;
+}
+
+header a:visited {
+    color: #666;
+}
+
+header a:hover {
+    background: #2a5298;
+    color: white;
+    transform: translateY(-2px);
+}
+
+header a:active {
+    background: #1e3c72;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: #1e3c72;
+    font-size: 32px;
+    margin: 40px 0;
+}
+
+.content{
+padding:40px;
+text-align:center;
+}
+
+.genre-section{
+margin-bottom:40px;
+text-align:left;
+}
+
+.genre-title{
+color:#2a5298;
+font-size:1.3em;
+margin-bottom:15px;
+padding-bottom:8px;
+border-bottom:2px solid #2a5298;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.song-item{
+background:#f5f7fb;
+border-radius:12px;
+padding:15px;
+}
+
+.song-item img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+.song-item h3{
+color:#1e3c72;
+font-size:1.1em;
+margin:10px 0 5px 0;
+}
+
+.song-item p{
+color:#666;
+font-size:0.85em;
+margin:3px 0;
+}
+
+audio{
+width:100%;
+margin-top:10px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #f5f7fb;
+    color: #666;
+}
+
+.back-btn {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #2a5298;
+    color: white;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.back-btn:hover {
+    background: #1e3c72;
+    transform: translateY(-2px);
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+<a href="index.html">Home</a>
+<a href="contacts.html">Contacts</a>
+<a href="Mybeats.html">My Beats</a>
+<a href="gallery.html">Gallery</a>
+</header>
+
+<div class="content">
+<h1>My Beats</h1>
+
+<div class="genre-section">
+<div class="genre-title">R&B / Alternative R&B</div>
+<div class="grid">
+
+<div class="song-item">
+<img src="Mybeats/Images/Always.png" alt="Always">
+<h3>Always</h3>
+<p><strong>Artist:</strong> Daniel Caesar</p>
+<audio controls>
+<source src="Mybeats/Always.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="song-item">
+<img src="Mybeats/Images/Snooze.jpg" alt="Snooze">
+<h3>Snooze</h3>
+<p><strong>Artist:</strong> SZA</p>
+<audio controls>
+<source src="Mybeats/Snooze.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="song-item">
+<img src="Mybeats/Images/Ivy.png" alt="Ivy">
+<h3>Ivy</h3>
+<p><strong>Artist:</strong> Frank Ocean</p>
+<audio controls>
+<source src="Mybeats/Ivy.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+</div>
+</div>
+
+<div class="genre-section">
+<div class="genre-title">Hip-Hop / Rap</div>
+<div class="grid">
+
+<div class="song-item">
+<img src="Mybeats/Images/God's plan.jfif" alt="God's Plan">
+<h3>God's Plan</h3>
+<p><strong>Artist:</strong> Drake</p>
+<audio controls>
+<source src="Mybeats/God's Plan.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="song-item">
+<img src="Mybeats/Images/Humble.jfif" alt="HUMBLE.">
+<h3>HUMBLE.</h3>
+<p><strong>Artist:</strong> Kendrick Lamar</p>
+<audio controls>
+<source src="Mybeats/HUMBLE.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="song-item">
+<img src="Mybeats/Images/Sunflower.jfif" alt="Sunflower">
+<h3>Sunflower</h3>
+<p><strong>Artist:</strong> Post Malone & Swae Lee</p>
+<audio controls>
+<source src="Mybeats/Sunflower.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+</div>
+</div>
+
+<div class="genre-section">
+<div class="genre-title">Pop</div>
+<div class="grid">
+
+<div class="song-item">
+<img src="Mybeats/Images/YnD.jpg" alt="Young Dumb & Broke">
+<h3>Young Dumb & Broke</h3>
+<p><strong>Artist:</strong> Khalid</p>
+<audio controls>
+<source src="Mybeats/Young Dumb & Broke.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="song-item">
+<img src="Mybeats/Images/As it was.jfif" alt="As It Was">
+<h3>As It Was</h3>
+<p><strong>Artist:</strong> Harry Styles</p>
+<audio controls>
+<source src="Mybeats/As It Was.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="song-item">
+<img src="Mybeats/Images/Blindinglights.png" alt="Blinding Lights">
+<h3>Blinding Lights</h3>
+<p><strong>Artist:</strong> The Weeknd</p>
+<audio controls>
+<source src="Mybeats/Blinding Lights.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+<a href="index.html" class="back-btn">← Back to Home</a><br><br>
+<small><strong>Created by Hadley Cajayon - 2026</strong></small>
+</footer>
+
+</div>
+
+
+
+</body>
+</html>
