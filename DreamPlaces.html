@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Places to Visit - Hadley P. Cajayon</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px 50px;
+    background: #f5f7fb;
+    gap: 30px;
+}
+
+header a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+header a:link {
+    color: #2a5298;
+}
+
+header a:visited {
+    color: #666;
+}
+
+header a:hover {
+    background: #2a5298;
+    color: white;
+    transform: translateY(-2px);
+}
+
+header a:active {
+    background: #1e3c72;
+    color: white;
+}
+
+
+h1 {
+    text-align: center;
+    color: #1e3c72;
+    font-size: 32px;
+    margin: 40px 0 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 35px;
+    font-style: italic;
+}
+
+.places-section {
+    padding: 0 50px 50px;
+}
+
+.places-section h2 {
+    color: #2a5298;
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #2a5298;
+    padding-bottom: 8px;
+}
+
+.place-card {
+    display: flex;
+    margin-bottom: 50px;
+    background: #f5f7fb;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.place-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+
+.place-card.reverse { flex-direction: row-reverse; }
+
+/*
+    KEY FIX — Pure HTML/CSS approach:
+    The <img> is given width="900" height="500" in the HTML tag itself.
+    This makes the image always render at exactly 900x500 px — matching
+    the <area> coords perfectly — no JavaScript needed.
+
+    The .map-side wrapper uses overflow: hidden so the image is clipped
+    to fit inside the card instead of overflowing the layout.
+    The image is also centered inside the wrapper using negative margin.
+*/
+.map-side {
+    flex: 0 0 540px;      /* fixed width — card image side */
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-side img {
+    /* Image is always 900x500. We scale it down visually via CSS
+       but the coords still work because the browser calculates
+       <area> clicks against the img element's rendered size.
+       width: 100% + height: 100% with object-fit keeps aspect ratio. */
+    display: block;
+    width: 540px;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* ── Card Info ── */
+.card-info {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.place-number {
+    font-size: 52px;
+    font-weight: 900;
+    color: #1e3c72;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.place-name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1e3c72;
+    margin-bottom: 4px;
+}
+
+.place-country {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2a5298;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.place-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.place-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: #2a5298;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #f5f7fb;
+    color: #666;
+}
+
+
+.back-btn {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #2a5298;
+    color: white;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.back-btn:hover {
+    background: #1e3c72;
+    transform: translateY(-2px);
+}
+</style>
+</head>
+
+<body>
+<div class="container" id="top">
+
+<header>
+    <a href="index.html">Home</a>
+    <a href="contacts.html">Contacts</a>
+    <a href="Mybeats.html">Mybeats</a>
+    <a href="MyFilmMovies.html">My Film Movies</a>
+    <a href="MyFilmTvShows.html">My Film TV Shows</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="DreamPlaces.html">Dream Places</a>
+</header>
+
+<h1>Dream Places to Visit</h1>
+<p class="subtitle">"The world is a book, and those who do not travel read only one page."</p>
+
+<div class="places-section">
+    <h2>My Dream Destinations</h2>
+
+    <div class="place-card" id="japan">
+        <div class="map-side">
+            <img src="DreamPlaces/JapanCollage.jpg"
+                 alt="Japan Collage"
+                 usemap="#japan-map"
+                 width="540" height="300">
+            <map name="japan-map">
+                <area shape="rect"
+                      coords="0,0,180,300"
+                      href="DreamPlaces/mountfuji.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Mount Fuji"
+                      title="Mount Fuji, Japan">
+                <area shape="rect"
+                      coords="180,0,360,300"
+                      href="DreamPlaces/shibuyacrossing.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Shibuya Crossing"
+                      title="Shibuya Crossing, Tokyo, Japan">
+                <area shape="rect"
+                      coords="360,0,540,300"
+                      href="DreamPlaces/kinkaku-ji.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Kinkaku-ji Temple"
+                      title="Kinkaku-ji Temple, Kyoto, Japan">
+            </map>
+        </div>
+        <div class="card-info">
+            <div class="place-number">01</div>
+            <div class="place-name">Japan</div>
+            <div class="place-country">East Asia</div>
+            <p class="place-desc">
+                Ang Japan ay isa sa mga bansang matagal ko nang pinapangarap puntahan dahil sa kakaibang pagsasama nito ng sinaunang tradisyon at makabagong teknolohiya. Gusto kong makita nang personal ang mga cherry blossoms kapag buong-buo ang pamumulaklak nila, maranasan ang makukulay at maliwanag na ilaw ng Shibuya Crossing sa Tokyo, at makaramdam ng katahimikan sa mga lumang templo ng Kyoto.            </p>
+        </div>
+    </div>
+
+
+    <div class="place-card reverse" id="greece">
+        <div class="map-side">
+            <img src="DreamPlaces/GreeceCollage.jpg"
+                 alt="Greece Collage"
+                 usemap="#greece-map"
+                 width="540" height="300">
+            <map name="greece-map">
+                <area shape="rect"
+                      coords="0,0,180,300"
+                      href="DreamPlaces/santorini.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Santorini"
+                      title="Santorini, Greece">
+                <area shape="rect"
+                      coords="180,0,360,300"
+                      href="DreamPlaces/santorinicaldera.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Santorini Caldera"
+                      title="Santorini Caldera, Greece">
+                <area shape="rect"
+                      coords="360,0,540,300"
+                      href="DreamPlaces/oia.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Oia Village"
+                      title="Oia Village, Santorini, Greece">
+            </map>
+        </div>
+        <div class="card-info">
+            <div class="place-number">02</div>
+            <div class="place-name">Santorini, Greece</div>
+            <div class="place-country">Southern Europe</div>
+            <p class="place-desc">
+                Ang Santorini naman ay parang perpektong bakasyunan para sa akin — iyong mga puting gusali na may asul na dome na nakatayo sa ibabaw ng bangin at tanaw ang Aegean Sea. Pangarap kong masilayan ang sikat na sunset sa Oia, tuklasin ang mga sinaunang guho, at maglayag sa paligid ng caldera.            </p>
+        </div>
+    </div>
+
+    <div class="place-card" id="newyork">
+        <div class="map-side">
+            <img src="DreamPlaces/NewYorkCollage.jpg"
+                 alt="New York Collage"
+                 usemap="#newyork-map"
+                 width="540" height="300">
+            <map name="newyork-map">
+                <area shape="rect"
+                      coords="0,0,180,300"
+                      href="DreamPlaces/nycskyline.jpg"
+                      target="DreamPlacesWindow"
+                      alt="NYC Skyline"
+                      title="NYC Skyline, New York, USA">
+                <area shape="rect"
+                      coords="180,0,360,300"
+                      href="DreamPlaces/timesquare.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Times Square"
+                      title="Times Square, New York, USA">
+                <area shape="rect"
+                      coords="360,0,540,300"
+                      href="DreamPlaces/statueofliberty.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Statue of Liberty"
+                      title="Statue of Liberty, New York, USA">
+            </map>
+        </div>
+        <div class="card-info">
+            <div class="place-number">03</div>
+            <div class="place-name">New York City</div>
+            <div class="place-country">United States</div>
+            <p class="place-desc">
+                Ang New York City ay kilala bilang lungsod na hindi natutulog, at gusto kong maramdaman mismo ang enerhiya nito. Makatayo sa gitna ng Times Square, maglakad sa Brooklyn Bridge, maglibot sa Central Park tuwing taglagas, at manood ng live na laro ng National Basketball Association — malaking pangarap ito para sa akin, pero ramdam ko rin na personal ang koneksyon ko rito.            </p>
+        </div>
+    </div>
+
+    <div class="place-card reverse" id="maldives">
+        <div class="map-side">
+            <img src="DreamPlaces/MaldivesCollage.jpg"
+                 alt="Maldives Collage"
+                 usemap="#maldives-map"
+                 width="540" height="300">
+            <map name="maldives-map">
+                <area shape="rect"
+                      coords="0,0,180,300"
+                      href="DreamPlaces/maldivesbeach.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Maldives Beach"
+                      title="Overwater Bungalows, Maldives">
+                <area shape="rect"
+                      coords="180,0,360,300"
+                      href="DreamPlaces/maldivesunderwater.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Maldives Underwater"
+                      title="Underwater Restaurant, Maldives">
+                <area shape="rect"
+                      coords="360,0,540,300"
+                      href="DreamPlaces/maldivesaerial.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Maldives Aerial"
+                      title="Aerial Island View, Maldives">
+            </map>
+        </div>
+        <div class="card-info">
+            <div class="place-number">04</div>
+            <div class="place-name">Maldives</div>
+            <div class="place-country">Indian Ocean</div>
+            <p class="place-desc">
+                Ang Maldives naman ay parang tunay na paraiso — malinaw na kulay asul na dagat, pinong puting buhangin, at mga overwater bungalow na tila nakalutang sa ibabaw ng karagatan. Gusto kong mag-snorkeling sa makukulay na coral reefs at pansamantalang lumayo sa ingay ng mundo.            </p>
+        </div>
+    </div>
+
+
+    <div class="place-card" id="paris">
+        <div class="map-side">
+            <img src="DreamPlaces/ParisCollage.jpg"
+                 alt="Paris Collage"
+                 usemap="#paris-map"
+                 width="540" height="300">
+            <map name="paris-map">
+                <area shape="rect"
+                      coords="0,0,180,300"
+                      href="DreamPlaces/eiffeltower.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Eiffel Tower"
+                      title="Eiffel Tower, Paris, France">
+                <area shape="rect"
+                      coords="180,0,360,300"
+                      href="DreamPlaces/louvremuseum.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Louvre Museum"
+                      title="Louvre Museum, Paris, France">
+                <area shape="rect"
+                      coords="360,0,540,300"
+                      href="DreamPlaces/seineriver.jpg"
+                      target="DreamPlacesWindow"
+                      alt="Seine River"
+                      title="Seine River, Paris, France">
+            </map>
+        </div>
+        <div class="card-info">
+            <div class="place-number">05</div>
+            <div class="place-name">Paris, France</div>
+            <div class="place-country">Western Europe</div>
+            <p class="place-desc">
+                Ang Paris — ang tinaguriang City of Light — ay matagal nang nagbibigay-inspirasyon sa maraming tao, at kabilang ako roon. Pangarap kong tumayo sa ilalim ng Eiffel Tower habang kumikislap ito sa gabi, maglakad sa tabi ng Seine River, at maligaw sa sining ng Louvre Museum. Para sa akin, ang lungsod na ito ay parang isang magandang painting na nabubuhay.            </p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <a href="index.html" class="back-btn">← Back to Home</a><br><br>
+    <small><strong>Created by Hadley Cajayon - 2026</strong></small>
+</footer>
+
+</div>
+</body>
+</html>
