@@ -117,28 +117,14 @@ h1 {
 
 .place-card.reverse { flex-direction: row-reverse; }
 
-/*
-    KEY FIX — Pure HTML/CSS approach:
-    The <img> is given width="900" height="500" in the HTML tag itself.
-    This makes the image always render at exactly 900x500 px — matching
-    the <area> coords perfectly — no JavaScript needed.
-
-    The .map-side wrapper uses overflow: hidden so the image is clipped
-    to fit inside the card instead of overflowing the layout.
-    The image is also centered inside the wrapper using negative margin.
-*/
 .map-side {
-    flex: 0 0 540px;      /* fixed width — card image side */
+    flex: 0 0 540px;     
     height: 300px;
     overflow: hidden;
     position: relative;
 }
 
 .map-side img {
-    /* Image is always 900x500. We scale it down visually via CSS
-       but the coords still work because the browser calculates
-       <area> clicks against the img element's rendered size.
-       width: 100% + height: 100% with object-fit keeps aspect ratio. */
     display: block;
     width: 540px;
     height: 300px;
@@ -146,7 +132,7 @@ h1 {
     cursor: pointer;
 }
 
-/* ── Card Info ── */
+
 .card-info {
     flex: 1;
     padding: 30px;
@@ -234,11 +220,12 @@ footer {
 <header>
     <a href="index.html">Home</a>
     <a href="contacts.html">Contacts</a>
-    <a href="Mybeats.html">Mybeats</a>
+    <a href="Mybeats.html">My Beats</a>
     <a href="MyFilmMovies.html">My Film Movies</a>
     <a href="MyFilmTvShows.html">My Film TV Shows</a>
     <a href="gallery.html">Gallery</a>
-    <a href="DreamPlaces.html">Dream Places</a>
+    <a href="DreamPlaces.html">My Dream Places</a>
+    <a href="BucketList.html">My BucketList</a>
 </header>
 
 <h1>Dream Places to Visit</h1>
