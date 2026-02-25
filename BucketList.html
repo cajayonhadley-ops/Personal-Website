@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bucket List - Hadley P. Cajayon</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px 50px;
+    background: #f5f7fb;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+header a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+header a:link { color: #2a5298; }
+header a:visited { color: #666; }
+
+header a:hover {
+    background: #2a5298;
+    color: white;
+    transform: translateY(-2px);
+}
+
+header a:active {
+    background: #1e3c72;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: #1e3c72;
+    font-size: 32px;
+    margin: 40px 0 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.bucket-section {
+    padding: 0 50px 50px;
+}
+
+.bucket-section > h2 {
+    color: #2a5298;
+    font-size: 20px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #2a5298;
+    padding-bottom: 8px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.photo-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    background: #f5f7fb;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.photo-item a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.photo-item:hover img {
+    transform: scale(1.08);
+}
+
+.photo-caption {
+    padding: 15px;
+    background: #f8f9fa;
+    border-top: 2px solid #e9ecef;
+}
+
+.caption-number {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2a5298;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.caption-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e3c72;
+    margin-bottom: 6px;
+}
+
+.caption-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #f5f7fb;
+    color: #666;
+}
+
+.back-btn {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #2a5298;
+    color: white;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.back-btn:hover {
+    background: #1e3c72;
+    transform: translateY(-2px);
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+    <a href="index.html">Home</a>
+    <a href="contacts.html">Contacts</a>
+    <a href="Mybeats.html">My Beats</a>
+    <a href="MyFilmMovies.html">My Film Movies</a>
+    <a href="MyFilmTvShows.html">My Film TV Shows</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="DreamPlaces.html">My Dream Places</a>
+    <a href="BucketList.html">My BucketList</a>
+</header>
+
+<h1>My Lifetime Bucket List</h1>
+<p class="subtitle">Mga pangarap at mithiin na gusto kong makamit sa aking buhay</p>
+
+<div class="bucket-section">
+    <h2>My Goals & Dreams</h2>
+
+    <div class="photo-grid">
+
+        <div class="photo-item">
+            <a href="BucketList/Graduate.JPG" target="BucketListWindow">
+                <img src="BucketList/Graduate.JPG" alt="Graduate">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">01</div>
+                <div class="caption-title">Graduate from College</div>
+                <div class="caption-desc">Isa sa pinakamahalagang goal ko ang makapagtapos ng pag-aaral. Para sa akin, ang diploma ay simbolo ng lahat ng pagod, puyat, at sakripisyo ko.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/House.jpg" target="BucketListWindow">
+                <img src="BucketList/House.jpg" alt="House">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">02</div>
+                <div class="caption-title">Build my own House</div>
+                <div class="caption-desc">Pangarap kong magkaroon ng sariling bahay na matatawag kong "tahanan" — isang lugar na ligtas, komportable, at puno ng masasayang alaala.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Car.jpg" target="BucketListWindow">
+                <img src="BucketList/Car.jpg" alt="Car">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">03</div>
+                <div class="caption-title">Buy a Car</div>
+                <div class="caption-desc">Pangarap kong makabili ng sasakyan lalong lalo na ang Audi R8. Para sa akin, simbolo ito ng tagumpay at bunga ng aking pagsisikap sa buhay.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Parents.jpg" target="BucketListWindow">
+                <img src="BucketList/Parents.jpg" alt="Parents">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">04</div>
+                <div class="caption-title">Repay My Parents’ Sacrifices</div>
+                <div class="caption-desc">Gusto kong masuklian ang lahat ng hirap ng aking mga magulang at maiparamdam kung gaano ako nagpapasalamat sa lahat ng ginawa nila.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Family.jpg" target="BucketListWindow">
+                <img src="BucketList/Family.jpg" alt="Family">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">05</div>
+                <div class="caption-title">Build a Happy and Successful Family</div>
+                <div class="caption-desc">Nais kong magkaroon ng sariling pamilya na puno ng pagmamahal, respeto, at may matibay na pundasyon.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Basketball.jpg" target="BucketListWindow">
+                <img src="BucketList/Basketball.jpg" alt="Basketball">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">06</div>
+                <div class="caption-title">Play Basketball in the Big Leagues</div>
+                <div class="caption-desc">Bilang mahilig sa basketball, pangarap kong makapaglaro sa malalaking liga — pinaghihirapan at pinaglalaanan ko ito ng oras at dedikasyon.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Travel.jpg" target="BucketListWindow">
+                <img src="BucketList/Travel.jpg" alt="Travel">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">07</div>
+                <div class="caption-title">Travel Around the World</div>
+                <div class="caption-desc">Gusto kong maranasan ang iba't ibang kultura at tanawin. Ang paglalakbay ay tungkol sa paglawak ng pananaw sa buhay.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Work.jpg" target="BucketListWindow">
+                <img src="BucketList/Work.jpg" alt="Work Abroad">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">08</div>
+                <div class="caption-title">Work Abroad</div>
+                <div class="caption-desc">Pangarap kong makapagtrabaho sa ibang bansa para mapalawak ang karanasan at magkaroon ng mas magandang oportunidad para sa career ko.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Canada.jpg" target="BucketListWindow">
+                <img src="BucketList/Canada.jpg" alt="Canada">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">09</div>
+                <div class="caption-title">Live in Canada</div>
+                <div class="caption-desc">Naaakit ako sa kalidad ng buhay at mga oportunidad sa Canada. Naniniwala akong makakatulong ito sa pag-abot ng mga pangarap ko.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Business.jpg" target="BucketListWindow">
+                <img src="BucketList/Business.jpg" alt="Business">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">10</div>
+                <div class="caption-title">Build a Successful Business</div>
+                <div class="caption-desc">Gusto kong magkaroon ng sariling negosyo na matatag at matagumpay, at makapagbigay ng trabaho at makatulong sa ibang tao.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Freedom.jpg" target="BucketListWindow">
+                <img src="BucketList/Freedom.jpg" alt="Freedom">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">11</div>
+                <div class="caption-title">Achieve Financial Freedom</div>
+                <div class="caption-desc">Gusto kong magkaroon ng sapat na pera at ipon para mabuhay nang komportable at hindi palaging nag-aalala sa gastusin. Layunin kong maging financially stable at secured ang kinabukasan ko at ng pamilya ko.</div>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <a href="BucketList/Inspire.jpg" target="BucketListWindow">
+                <img src="BucketList/Inspire.jpg" alt="Inspire">
+            </a>
+            <div class="photo-caption">
+                <div class="caption-number">12</div>
+                <div class="caption-title">Inspire Others Through My Success</div>
+                <div class="caption-desc">Nais kong maging inspirasyon sa iba sa pamamagitan ng aking tagumpay. Gusto kong patunayan na sa sipag at tiyaga, kayang maabot ang mga pangarap sa buhay.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <a href="index.html" class="back-btn">← Back to Home</a><br><br>
+    <small><strong>Created by Hadley Cajayon - 2026</strong></small>
+</footer>
+
+</div>
+</body>
+</html>
