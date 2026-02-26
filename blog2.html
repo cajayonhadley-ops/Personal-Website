@@ -83,6 +83,19 @@ footer {
     background-color: #1b2a41;
 }
 
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.image-wrapper a.img-link {
+    display: block;
+    width: 100%;
+}
+
 img {
     width: 100%;
     max-width: 800px;
@@ -91,7 +104,13 @@ img {
     border: 4px solid #0b3d91;
     border-radius: 10px;
     display: block;
-    margin: 20px auto;
+    margin: 0 auto;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+img:hover {
+    opacity: 0.85;
 }
 
 .image-caption {
@@ -100,7 +119,7 @@ img {
     color: #1b2a41;
     font-size: 14px;
     text-indent: 0;
-    margin-bottom: 20px;
+    margin: 8px 0 5px 0;
 }
 
 .three-images {
@@ -108,11 +127,20 @@ img {
     gap: 20px;
     margin: 20px 0;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .three-images > div {
     flex: 1;
     max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.three-images a.img-link {
+    display: block;
+    width: 100%;
 }
 
 .three-images img {
@@ -150,8 +178,12 @@ img {
             <li><strong>It keeps me motivated despite challenges.</strong></li>
         </ul>
         
-        <img src="Blog2/ball1.JPG" alt="Basketball passion">
-        <p class="image-caption">Pure love for the game</p>
+        <div class="image-wrapper">
+            <a href="Blog2/ball1.JPG" target="Blog2Window" class="img-link">
+                <img src="Blog2/ball1.JPG" alt="Basketball passion">
+            </a>
+            <p class="image-caption">Pure love for the game</p>
+        </div>
     </section>
 
     <section>
@@ -167,15 +199,21 @@ img {
         
         <div class="three-images">
             <div>
-                <img src="Blog2/ball2.JPG" alt="Student-athlete">
+                <a href="Blog2/ball2.JPG" target="Blog2Window" class="img-link">
+                    <img src="Blog2/ball2.JPG" alt="Student-athlete">
+                </a>
                 <p class="image-caption">Balancing academics and athletics</p>
             </div>
             <div>
-                <img src="Blog2/ball3.JPG" alt="Training">
+                <a href="Blog2/ball3.JPG" target="Blog2Window" class="img-link">
+                    <img src="Blog2/ball3.JPG" alt="Training">
+                </a>
                 <p class="image-caption">Daily training and dedication</p>
             </div>
             <div>
-                <img src="Blog2/ball4.JPG" alt="Student life">
+                <a href="Blog2/ball4.JPG" target="Blog2Window" class="img-link">
+                    <img src="Blog2/ball4.JPG" alt="Student life">
+                </a>
                 <p class="image-caption">The student-athlete grind</p>
             </div>
         </div>
@@ -195,8 +233,12 @@ img {
             <li><strong>I experienced silent disappointment but learned how painful standards beyond my control can be.</strong></li>
         </ul>
         
-        <img src="Blog2/ball6.jpg" alt="Height challenge">
-        <p class="image-caption">Fighting against the odds</p>
+        <div class="image-wrapper">
+            <a href="Blog2/ball6.jpg" target="Blog2Window" class="img-link">
+                <img src="Blog2/ball6.jpg" alt="Height challenge">
+            </a>
+            <p class="image-caption">Fighting against the odds</p>
+        </div>
     </section>
 
     <section>
@@ -208,8 +250,12 @@ img {
             Kahit mabagal ang progress at maraming setbacks, alam kong bawat hirap, bawat pagkatalo, at bawat sakripisyo ay bahagi ng paghubog sa kung sino ako ngayon at sino ang gusto kong maging sa hinaharap. <strong>Natutunan ko rin na mahalaga ang suporta ng pamilya at kaibigan; sila ang nagbibigay lakas at inspirasyon sa akin.</strong> Sa huli, natutunan ko na ang journey ay kasinghalaga ng destination—hindi lang tungkol sa panalo, kundi sa kung paano ka natutong bumangon sa bawat pagkakadapa at paano ka lumalakas sa kabila ng mga limitasyon.
         </p>
         
-        <img src="Blog2/ball5.JPG" alt="Journey">
-        <p class="image-caption">Never giving up on the dream</p>
+        <div class="image-wrapper">
+            <a href="Blog2/ball5.JPG" target="Blog2Window" class="img-link">
+                <img src="Blog2/ball5.JPG" alt="Journey">
+            </a>
+            <p class="image-caption">Never giving up on the dream</p>
+        </div>
     </section>
 
     <hr>
